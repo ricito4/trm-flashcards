@@ -9,5 +9,4 @@ class User < ActiveRecord::Base
   validates :email, format: {with: /\A\w+@\w+[.]\w+\z/i, message: "must be valid email address."}
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6 }
-  # Remember to create a migration!
 end
