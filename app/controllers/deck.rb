@@ -1,10 +1,12 @@
 get '/decks/:id/show' do
+  require_user
   current_round= Round.create(user_id: current_user.id, deck_id: params[:id])
 
   redirect "/decks/#{current_round.id}/play"
 end
 
 get '/decks/:round_id/play' do
+  require_user
   @round= Round.find(params[:round_id])
   @deck= Deck.find_by(id: @round.deck_id)
   @cards= Card.where(deck_id: @deck.id)
@@ -53,6 +55,7 @@ post '/decks/:round_id/check' do
 end
 
 get "/decks/:round_id/finish" do
+  require_user
   @round= Round.find(params[:round_id])
   @deck= Deck.find_by(id: @round.deck_id)
   @guesses= Guess.where(round_id: @round.id)
