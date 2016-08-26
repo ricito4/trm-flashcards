@@ -1,3 +1,4 @@
+
 get '/user/new' do
   erb :'users/new'
 end
@@ -11,3 +12,4 @@ post '/user' do
     erb :'users/new'
   end
 end
+
