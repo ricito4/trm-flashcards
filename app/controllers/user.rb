@@ -14,3 +14,8 @@ post '/user' do
   end
 end
 
+get '/user/:id' do
+  @user=User.find(params[:id])
+  @rounds= @user.rounds
+  erb :'/users/show'
+end

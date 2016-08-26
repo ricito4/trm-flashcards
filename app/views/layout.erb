@@ -24,7 +24,7 @@
           <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
 
           <% if current_user %>
-            <li class="pipe-separate t-light-green left">hello <%= current_user.username%></li>
+            <li class="pipe-separate t-light-green left">hello <a href="/user/<%=current_user.id%>"><%= current_user.username%></a></li>
             <li class="pipe-separate t-light-green left"><a href="/logout">logout</a></li>
           <% else %>
             <li class="pipe-separate t-light-green left"><a href="/login">login</a></li>

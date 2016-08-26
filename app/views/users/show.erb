@@ -1,0 +1,11 @@
+<h2> <%= @user.username %> </h2>
+
+<% @rounds.each do |round| %>
+  <p><%=round.deck.name %></p>
+  <ul>
+    <li>Date: <%=round.updated_at%></li>
+    <li>Cards in Deck: <%=round.deck.cards.length%></li>
+    <li>First Guess Correct: <%=round.first_try_correct%></li>
+    <li>Total Guesses: <%=round.guesses.length%></li>
+  </ul>
+<% end %>

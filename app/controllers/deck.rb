@@ -74,6 +74,6 @@ get "/decks/:round_id/finish" do
       t_guess.card_id == f_guess.card_id
     end
   end
-
+  @round.update(first_try_correct: @true_guesses.length)
   erb :'/decks/finish'
 end
