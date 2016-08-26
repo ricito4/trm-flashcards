@@ -24,11 +24,11 @@
           <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
 
           <% if current_user %>
-            <li class="pipe-separate t-light-green left">hello <%= current_user_signed_in.username%></li>
-            <li class="pipe-separate t-light-green left"><a href="/users/logout">logout</a></li>
+            <li class="pipe-separate t-light-green left">hello <%= current_user.username%></li>
+            <li class="pipe-separate t-light-green left"><a href="/logout">logout</a></li>
           <% else %>
-            <li class="pipe-separate t-light-green left"><a href="/users/login">login</a></li>
-            <li class="pipe-separate t-light-green left"><a href="/users/new">create account</a></li>
+            <li class="pipe-separate t-light-green left"><a href="/login">login</a></li>
+            <li class="pipe-separate t-light-green left"><a href="/user/new">create account</a></li>
           <% end %>
         </div>
 
