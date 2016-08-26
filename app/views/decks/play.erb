@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Play!</h2>
+    <p> <%= @card.question %> </p>
+
+    <form action="/decks/<%=@round.id%>/check" method="post">
+      <label for="answer">Your Answer:</label>
+      <input type="text" name="answer"><br>
+      <input type="hidden" name="card_id" value="<%=@card.id%>">
+
+      <input type="submit" value="Guess">
+    </form>
+</div>

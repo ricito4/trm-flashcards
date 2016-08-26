@@ -1,13 +1,10 @@
 <div class="container">
+  <h1> Playable Decks!!! </h1>
 
+  <ul>
+  <% @decks.each do |deck| %>
+  <li> <a href="/decks/<%=deck.id%>/show"><%=deck.name%></a></li>
+  <% end %>
+  </ul>
 </div>
 
-<html>
-<head>
-  <title></title>
-</head>
-<body>
- <h1>HOME PAGE</h1>
-
-</body>
-</html>
