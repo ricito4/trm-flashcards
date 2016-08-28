@@ -33,9 +33,9 @@ post '/decks/:round_id/play' do
 end
 
 get '/decks/:round_id/stats' do
-	@round = Round.find(params[:round_id])
-	@guesses = Guess.all
-	@deck = Deck.find(@round.deck_id)
+  @round = Round.find(params[:round_id])
+  @guesses = Guess.all
+  @deck = Deck.find(@round.deck_id)
   @cards = @deck.cards
   @false_guesses = Guess.where(user_id: current_user.id, correct: false)
   @true_guesses = Guess.where(user_id: current_user.id, correct: true)
