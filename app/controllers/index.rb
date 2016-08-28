@@ -1,5 +1,10 @@
 get '/' do
-  erb :'index'
+  @decks = Deck.all
+  if current_user
+    erb :'users/index'
+  else
+    erb :'index'
+  end
 end
 
 post '/' do
@@ -7,7 +12,7 @@ post '/' do
   @user  = User.find_by(username: @username)
   if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
-    erb :index
+    redirect '/'
   else
     @errors = ['Invalid username/password']
     erb :'/users/login'

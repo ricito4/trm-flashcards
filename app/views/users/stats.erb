@@ -1,0 +1,8 @@
+
+<h1> Great! </h1>
+
+<h2> <%= @deck.name %> </h2>
+<%= @deck.cards.size %> 
+<p> You've completed a round of <%= @deck.name%>. You answered <%= @first_try.length %> 
+out of <%= @cards.length %> on the first try. You submitted <%=@guesses.length %> 
+total guesses before each card was answered correctly </p>

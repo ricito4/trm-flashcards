@@ -1,0 +1,7 @@
+<form action="/decks/<%= @round.id %>/play" method="POST">
+  <label for="question"><%= @card.question%></label><br>
+  <input type="text" name="answer"><br>
+  <input type="hidden" name="card_id" value="<%=@card.id%>">
+  <input type="hidden" name="round_id" value="<%=@round.id%>">
+  <input type="submit" value="SUBMIT">
+</form>

@@ -3,7 +3,11 @@
   <title></title>
 </head>
 <body>
- <h1>HOME PAGE</h1>
-
+ <h1>Decks</h1>
+ <ul>
+ <% @decks.each do |deck| %>
+ <li><a href="/decks/<%= deck.id %>"><%= deck.name %></a></li>
+ <% end %>
+ <ul>
 </body>
 </html>
